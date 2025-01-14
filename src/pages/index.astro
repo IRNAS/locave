@@ -1,0 +1,376 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
+
+const benefits = [
+	{
+		title: "5x Faster Deployment",
+		description: "Revolutionary fiber optic infrastructure that can be laid 5 times faster than traditional systems.",
+		icon: "⚡"
+	},
+	{
+		title: "10x Cost Reduction",
+		description: "Significantly more cost-effective than traditional VHF systems, making cave communication accessible.",
+		icon: "💰"
+	},
+	{
+		title: "Ultra-Lightweight",
+		description: "Carry up to 1km of infrastructure with just 8kg - perfect for challenging cave environments.",
+		icon: "🎯"
+	},
+	{
+		title: "Smartphone Integration",
+		description: "Use your existing smartphones for underground communication - no specialized equipment needed.",
+		icon: "📱"
+	}
+];
+---
+
+<Layout 
+	title="LoCave - Revolutionary Underground Communication System for Cave Research & Rescue"
+	description="LoCave revolutionizes cave communication with rapid deployment fiber optic technology. 5x faster setup, 10x more cost-effective than VHF, enabling reliable underground smartphone communication for cave research and rescue teams."
+>
+	<header class="header">
+		<div class="logo">
+			<!-- img src="C:\Users\Luka\Downloads\locave\src\pages\Logo.png" alt="LoCave" width="120" height="40" -->
+		</div>
+	</header>
+	<main>
+		<!-- Hero Section -->
+		<section class="hero">
+			<div class="hero-grid">
+				<div class="hero-content">
+					<h1>Revolutionizing Cave Exploration and Safety</h1>
+					<p class="hero-subtitle">
+						Revolutionary fiber optic technology enabling reliable communication for cave research and rescue teams.
+					</p>
+					<div class="cta-group">
+						<a href="#contact" class="cta-button">Request Demo</a>
+						<a href="#benefits" class="cta-button secondary">Learn More</a>
+					</div>
+				</div>
+				<div class="hero-video">
+					<iframe 
+						width="100%" 
+						height="100%" 
+						src="https://www.youtube.com/embed/6RVexk5-W6s" 
+						title="Cave Communication System"
+						frameborder="0" 
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+						allowfullscreen
+						class="video-frame"
+					></iframe>
+				</div>
+			</div>
+		</section>
+
+		<!-- Benefits Section -->
+		<section id="benefits" class="benefits">
+			<h2>Why Choose LoCave?</h2>
+			<div class="benefits-grid">
+				{benefits.map(benefit => (
+					<div class="benefit-card">
+						<div class="benefit-icon">{benefit.icon}</div>
+						<h3>{benefit.title}</h3>
+						<p>{benefit.description}</p>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<!-- Features Section -->
+		<section class="features">
+			<div class="features-grid">
+				<div class="feature-content">
+					<h2>Revolutionary Cave Communication</h2>
+					<p>LoCave replaces heavy twisted pair wires with lightweight fiber optic nodes, enabling:</p>
+					<ul>
+						<li>Real-time communication underground</li>
+						<li>Enhanced safety for cave explorers</li>
+						<li>Efficient rescue operations</li>
+						<li>Seamless research coordination</li>
+					</ul>
+				</div>
+				<div class="feature-image">
+					<img src='/_cave.jpg') alt="Cave Communication System in Action" />
+				</div>
+			</div>
+		</section>
+
+		<!-- Contact Section -->
+		<section id="contact" class="contact">
+			<h2>Transform Your Cave Operations</h2>
+			<p>Request a demo or partner with LoCave to revolutionize underground communication</p>
+			<ContactForm />
+		</section>
+	</main>
+</Layout>
+
+<style>
+	main {
+		color: #1f2937;
+	}
+	
+	.header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		padding: 1rem 2rem;
+		background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+		background-size: cover;
+		background-position: center;
+		backdrop-filter: blur(5px);
+		z-index: 100;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.logo {
+		height: 160px;
+		background: url('/_Logo.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+
+	.logo img {
+		filter: brightness(0) invert(1);
+	}
+
+	.hero {
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		padding: 6rem 2rem 2rem;
+		background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/_cave.jpg');
+		color: white;
+	}
+
+	.hero-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 4rem;
+		max-width: 1200px;
+		margin: 0 auto;
+		align-items: center;
+	}
+
+	.hero-content {
+		max-width: 600px;
+	}
+
+	h1 {
+		font-size: 3.5rem;
+		font-weight: 800;
+		margin-bottom: 1rem;
+		line-height: 1.1;
+	}
+
+	.hero-subtitle {
+		font-size: 1.5rem;
+		margin-bottom: 2rem;
+		opacity: 0.9;
+	}
+
+	.cta-group {
+		display: flex;
+		gap: 1rem;
+	}
+
+	.cta-button {
+		background: rgb(var(--primary));
+		color: white;
+		padding: 1rem 2.5rem;
+		border-radius: 100px;
+		text-decoration: none;
+		font-weight: 600;
+		transition: all 0.3s ease;
+		position: relative;
+		overflow: hidden;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		box-shadow: 0 4px 15px rgba(var(--primary), 0.3);
+	}
+
+	.cta-button::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(
+			120deg,
+			transparent,
+			rgba(255, 255, 255, 0.2),
+			transparent
+		);
+		transform: translateX(-100%);
+		transition: 0.6s;
+	}
+
+	.cta-button:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 6px 20px rgba(var(--primary), 0.4);
+	}
+
+	.cta-button:hover::before {
+		transform: translateX(100%);
+	}
+
+	.cta-button.secondary {
+		background: transparent;
+		border: 2px solid rgba(255, 255, 255, 0.8);
+		box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+	}
+
+	.cta-button.secondary:hover {
+		background: rgba(255, 255, 255, 0.1);
+		box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+	}
+
+	.hero-video {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		aspect-ratio: 16/9;
+		border-radius: 1rem;
+		overflow: hidden;
+		box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+	}
+
+	.video-frame {
+		width: 100%;
+		height: 100%;
+		border-radius: 1rem;
+	}
+
+	.benefits {
+		padding: 4rem 2rem;
+		background: #f3f4f6;
+	}
+
+	.benefits h2 {
+		text-align: center;
+		font-size: 2.5rem;
+		margin-bottom: 3rem;
+	}
+
+	.benefits-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.benefit-card {
+		background: white;
+		padding: 2rem;
+		border-radius: 0.5rem;
+		box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+	}
+
+	.benefit-icon {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	.features {
+		padding: 4rem 2rem;
+		background: white;
+	}
+
+	.features-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 4rem;
+		max-width: 1200px;
+		margin: 0 auto;
+		align-items: center;
+	}
+
+	.feature-content {
+		max-width: 500px;
+	}
+
+	.features h2 {
+		font-size: 2.5rem;
+		margin-bottom: 2rem;
+	}
+
+	.features ul {
+		list-style-type: none;
+		padding: 0;
+	}
+
+	.features li {
+		margin-bottom: 1rem;
+		padding-left: 2rem;
+		position: relative;
+	}
+
+	.features li::before {
+		content: "✓";
+		position: absolute;
+		left: 0;
+		color: rgb(var(--primary));
+		font-weight: bold;
+	}
+
+	.feature-image {
+		border-radius: 1rem;
+		overflow: hidden;
+		box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+	}
+
+	.feature-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 1rem;
+	}
+
+	.contact {
+		padding: 4rem 2rem;
+		background: #f3f4f6;
+		text-align: center;
+	}
+
+	.contact h2 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.contact p {
+		margin-bottom: 3rem;
+	}
+
+	@media (max-width: 768px) {
+		.hero-grid, .features-grid {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+
+		h1 {
+			font-size: 2.5rem;
+		}
+		
+		.hero-subtitle {
+			font-size: 1.25rem;
+		}
+		
+		.cta-group {
+			flex-direction: column;
+		}
+		
+		.benefits-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.feature-content {
+			max-width: 100%;
+		}
+	}
+</style>
