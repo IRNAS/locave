@@ -4,24 +4,24 @@ import ContactForm from '../components/ContactForm.astro';
 
 const benefits = [
 	{
-		title: "5x Faster Deployment",
+		title: "Universal Compatibility",
+		description: "A combination of connectivity solutions suitable for any deployment.",
+		icon: "🛜"
+	},
+	{
+		title: "Faster Deployment",
 		description: "Revolutionary fiber optic infrastructure that can be laid 5 times faster than traditional systems.",
 		icon: "⚡"
 	},
 	{
-		title: "10x Cost Reduction",
-		description: "Significantly more cost-effective than traditional VHF systems, making cave communication accessible.",
+		title: "Cheaper",
+		description: "Thanks to most advanced networking innovation, we're making cave communication accessible for daily use.",
 		icon: "💰"
 	},
 	{
-		title: "Ultra-Lightweight",
-		description: "Carry up to 1km of infrastructure with just 8kg - perfect for challenging cave environments.",
-		icon: "🎯"
-	},
-	{
-		title: "Smartphone Integration",
-		description: "Use your existing smartphones for underground communication - no specialized equipment needed.",
-		icon: "📱"
+		title: "A Complete Ecosystem",
+		description: "Manage the underground world expeditions with LoCave cloud.",
+		icon: "🌏"
 	}
 ];
 ---
@@ -64,7 +64,26 @@ const benefits = [
 			</div>
 		</section>
 
-		<!-- Benefits Section >
+		<!-- Features Section-->
+		<section id="features" class="features">
+			<div class="feature-content">
+				<!--h1>How it works?</h1-->
+				<h1 class="features-title">
+					An Ecosystem of underground communication.
+				</h1>
+				<h2 class="features-subtitle">
+					LoCave combines a variety of technologies in 
+				</h2>
+				<div class="feature-image">
+					<img src='/_cave-sketch.png') alt="Cave Communication System in Action" />
+				</div>
+			</div>
+			<div class="features-cta">
+				<a href="#contact" class="cta-button">Learn More</a>
+			</div>
+		</section>
+		
+		<!-- Benefits Section -->
 		<section id="benefits" class="benefits">
 			<h2>Why Choose LoCave?</h2>
 			<div class="benefits-grid">
@@ -76,9 +95,9 @@ const benefits = [
 					</div>
 				))}
 			</div>
-		</section -->
+		</section>
 
-		<!-- Features Section -->
+		<!-- Features Section>
 		<section id="features" class="features">
 			<div class="features-grid">
 				<div class="feature-content">
@@ -95,7 +114,7 @@ const benefits = [
 					<img src='/_cave-sketch.png') alt="Cave Communication System in Action" />
 				</div>
 			</div>
-		</section>
+		</section -->
 
 		<!-- Contact Section -->
 		<section id="contact" class="contact">
@@ -311,6 +330,23 @@ const benefits = [
 		margin-bottom: 1rem;
 		padding-left: 2rem;
 		position: relative;
+	}
+
+	.features-title {
+		font-size: 2.5rem;
+		margin-bottom: 3rem;
+		font-weight: bold;
+	}
+
+	.features-subtitle {
+		font-size: 1.5rem;
+		margin-bottom: 3rem;
+		font-weight: normal;
+	}
+
+	.features-cta {
+		display: flex;
+		justify-content: center;
 	}
 
 	.features li::before {
